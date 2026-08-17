@@ -1,0 +1,101 @@
+[data-md-color-scheme="onyx"] {
+    --mx-topbar-bg: #5865F2;
+    --md-default-bg-color: #070709;
+    --md-default-fg-color: oklab(0.894514 0.000141621 -0.0041967);
+    --md-default-fg-color--light: oklab(0.916613 0.00117499 -0.00385195);
+    --md-typeset-color: oklab(0.894514 0.000141621 -0.0041967);
+    --md-typeset-a-color: oklab(0.623584 -0.0424406 -0.161664);
+    --md-typeset-small-color: oklab(0.694091 0.00173712 -0.0100561);
+    --md-typeset-table-color: var(--md-default-fg-color--light);
+    --md-typeset-table-color--light: oklab(91.669% 0.00114 -0.00398 / 0.25);
+
+    --md-code-bg-color: oklab(0.57738 0.0140701 -0.208587 / 0.0784314);
+    --md-code-fg-color: oklab(0.894514 0.000141621 -0.0041967);
+    --md-code-border-color: color-mix(in oklab, hsl(240 calc(1*4%) 60.784% /0.3215686274509804) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.3215686274509804) var(--custom-theme-border-color-amount, var(--custom-theme-base-color-amount, 0%)));
+
+    --md-admonition-fg-color: var(--md-default-fg-color);
+    --md-admonition-bg-color: var(--md-default-bg-color);
+
+    --md-typeset-mention-fg-color: oklab(0.747617 0.00671133 -0.126112);
+    --md-typeset-mention-bg-color: oklab(0.57738 0.0140701 -0.208587 / 0.239216);
+    --md-typeset-mention-fg-color--hover: rgb(255, 255, 255);
+    --md-typeset-mention-bg-color--hover: rgb(88, 101, 242);
+
+    --md-default-fg-color--lightest: var(--md-default-fg-color);
+
+    --md-typeset-spoiler-bg-color: oklab(0.480977 0.00313355 -0.0156577);
+    --md-typeset-spoiler-bg-color--hover: oklab(0.588066 0.00220281 -0.0119324);
+    --md-typeset-spoiler-bg-color--clicked: rgba(151, 151, 159, 0.12);
+
+    --md-typeset-spoiler-fg-color: oklab(0.894514 0.000141621 -0.0041967);
+}
+
+.md-footer-meta {
+    background-color: var(--md-default-bg-color);
+}
+
+.md-top__button {
+    background-color: #5865f280;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.md-typeset code {
+    border: 1px solid var(--md-code-border-color);
+    border-radius: 4px;
+}
+
+.md-typeset small {
+    color: oklab(0.694091 0.00173712 -0.0100561);
+    opacity: 1;
+}
+
+.md-typeset a:hover {
+    color: var(--md-typeset-a-color);
+}
+
+.md-typeset .mention {
+    color: var(--md-typeset-mention-fg-color);
+    background-color: var(--md-typeset-mention-bg-color);
+    border-radius: 3px;
+    padding: 0.15rem;
+    transition: color 125ms, background-color 125ms;
+    cursor: pointer;
+}
+
+.md-typeset .mention small {
+    color: var(--md-typeset-mention-fg-color);
+    transition: color 125ms;
+}
+
+.md-typeset .mention:hover {
+    background-color: var(--md-typeset-mention-bg-color--hover);
+    color: var(--md-typeset-mention-fg-color--hover);
+}
+
+.md-typeset .mention:hover small {
+    color: var(--md-typeset-mention-fg-color--hover);
+}
+
+.md-typeset .spoiler {
+    background-color: var(--md-typeset-spoiler-bg-color);
+    color: var(--md-typeset-spoiler-bg-color);
+    transition: background-color 125ms, color 125ms;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.md-typeset .spoiler:hover {
+    background-color: var(--md-typeset-spoiler-bg-color--hover);
+    color: var(--md-typeset-spoiler-bg-color--hover);
+}
+
+.md-typeset .spoiler.clicked {
+    background-color: var(--md-typeset-spoiler-bg-color--clicked);
+    color: var(--md-default-fg-color)
+}

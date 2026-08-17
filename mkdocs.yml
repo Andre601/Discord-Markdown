@@ -1,0 +1,104 @@
+site_name: Discord Markdown
+site_description: 'A website listing all formatting options available on Discord.'
+site_author: 'Andre_601'
+site_url: 'https://docs.andre601.ch/Discord-Markdown'
+
+copyright: |
+  Author: Andre_601 & Shared under the <a href="https://github.com/Andre601/Discord-Markdown/blob/master/LICENSE" target="_blank" rel="nofollow">MIT License</a>
+  <br>The Discord icon is a registered Icon owned by Discord Inc.
+  <br>The copyright belongs to the original copyright-owners and no attempt at claiming the icon's copyright is made.
+  <br>This site is not endorsed, made, nor supported by Discord Inc.
+
+docs_dir: docs/
+
+repo_name: Andre601/Discord-Markdown
+repo_url: https://github.com/Andre601/Discord-Markdown
+
+nav:
+  - Welcome: index.md
+  - Basic Markdown: basic-markdown.md
+  - Discord Markdown: discord-markdown.md
+
+watch:
+  - icons
+
+theme:
+  name: material
+  topbar_style: primary
+  palette:
+    - scheme: 'onyx'
+      primary: 'indigo'
+      accent: 'indigo'
+  features:
+    - navigation.tabs
+    - navigation.top
+  icon:
+    repo: 'simple/github'
+    admonition:
+      note: octicons/pencil-24
+      abstract: octicons/paste-24
+      info: octicons/info-24
+      tip: octicons/light-bulb-24
+      success: octicons/check-24
+      question: octicons/question-24
+      warning: octicons/alert-24
+      failure: octicons/x-24
+      danger: octicons/zap-24
+      bug: octicons/bug-24
+      example: octicons/beaker-24
+      quote: octicons/comment-24
+
+extra_css:
+  - assets/css/extra.css
+
+extra_javascript:
+  - assets/javascript/spoiler.js
+
+plugins:
+  - search
+  - macros:
+      module_name: macros
+
+markdown_extensions:
+  - attr_list:
+  - meta:
+  - markdown.extensions.toc:
+      permalink: true
+      toc_depth: 2-6
+  - markdown.extensions.footnotes:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - icons
+  - pymdownx.highlight:
+  - pymdownx.magiclink:
+  - pymdownx.snippets:
+      base_path: _snippets
+  - pymdownx.superfences:
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+  - pymdownx.tilde:
+  - pymdownx.saneheaders:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.blocks.admonition:
+      types:
+        - info
+        - note
+        - tip
+        - example
+        - warning
+        - extensions
+        - pages
+        - gh-note
+        - gh-tip
+        - gh-important
+        - gh-warning
+        - gh-caution
+  - pymdownx.blocks.tab:
+      alternate_style: true
+  - pymdownx.blocks.details:
+  - pymdownx.blocks.html:
