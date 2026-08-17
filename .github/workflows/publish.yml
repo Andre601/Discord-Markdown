@@ -1,0 +1,51 @@
+name: "Publish Site"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/publish.yml"
+      - "docs/**"
+      - "icons/**"
+      - "macros/**"
+      - "mkdocs.yml"
+      - "requirements.txt"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: "Checkout Repository"
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: "Setup Python"
+        uses: actions/setup-python@v7
+        with:
+          python-version: 3.x
+      - name: "Install dependencies"
+        run: "pip install -r requirements.txt"
+      - name: "Build site"
+        run: "properdocs build"
+      - name: "Configure Pages"
+        uses: actions/configure-pages@v6
+      - name: "Upload Pages Artifact"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: "site/"
+      - name: "Deploy to GitHub Pages"
+        uses: actions/deploy-pages@v5
+        id: deployment
