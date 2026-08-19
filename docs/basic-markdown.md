@@ -23,9 +23,7 @@ Using between 1 and 3 Hashtags (`#`) followed by a space and any text creates a 
 ////
 
 //// tab | Result
-<h1>H1</h1>
-<h2>H2</h2>
-<h3>H3</h3>
+{{ message('<h1>H1</h1><h2>H2</h2><h3>H3</h3>') }}
 ////
 ///
 
@@ -41,7 +39,7 @@ Surrounding text with two asterisk symbols (`**`) will render it bold.
 ////
 
 //// tab | Result
-**Bold Text**
+{{ message('<b>Bold Text</b>') }}
 ////
 ///
 
@@ -57,7 +55,7 @@ Surrounding text with one asterisk symbol (`*`) will render it italic (tilted).
 ////
 
 //// tab | Result
-*Italic Text*
+{{ message('<i>Italic Text</i>') }}
 ////
 ///
 
@@ -76,7 +74,7 @@ __Underline Text__
 ////
 
 //// tab | Result
-<u>Underline Text</u>
+{{ message('<u>Underline Text</u>') }}
 ////
 ///
 
@@ -95,7 +93,7 @@ Surrounding text with 2 tildas (`~~`) will render it as strikethrough.
 ////
 
 //// tab | Result
-~~Strikethrough Text~~
+{{ message('<del>Strikethrough Text</del>') }}
 ////
 ///
 
@@ -114,7 +112,7 @@ Surrounding text with a back tick (`` ` ``) will render it as inline code, with 
 ////
 
 //// tab | Result
-`Inline Code`
+{{ message('<code>Inline Code</code>') }}
 ////
 ///
 
@@ -132,9 +130,7 @@ Code Block
 ////
 
 //// tab | Result
-```
-Code Block
-```
+{{ message('<pre><code>Code Block</code></pre>') }}
 ////
 ///
 
@@ -160,12 +156,12 @@ Embeds may also not be shown, if the user who posted the link does not have `Emb
 /// example
 //// tab | Markdown
 ```
-https://google.com
+https://discord.com
 ```
 ////
 
 //// tab | Result
-https://google.com{ target="_blank" rel="nofollow" }
+{{ message('<a href="https://discord.com" target="_blank" rel="nofollow">https://discord.com</a>') }}
 ////
 ///
 
@@ -176,19 +172,19 @@ Embedded Links (Text that can be clicked to open a link) can be made using the b
 /// example
 //// tab | Markdown
 ```
-[This links to Google](https://google.com)
+[This links to Discord](https://discord)
 ```
 ////
 
 //// tab | Result
-[This links to Google](https://google.com){ target="_blank" rel="nofollow" }
+{{ message('<a href="https://discord.com" target="_blank" rel="nofollow" title="This links to Discord<br><br>(https://discord.com)">This links to Discord</a>')}}
 ////
 ///
 
 /// tip
 You can add a title to the link that is shown when hovering over it. Just add the text to display in double quotes after the link, but before the closing bracket.
 
-**Example:** `[Totally not google](https://google.com "Trust me. It's Google!")` -> [Totally not google](https://google.com "Trust me. It's not Google!")
+**Example:** `[Totally not google](https://google.com "Trust me. It's Google!")` -> [Totally not google](https://google.com "Trust me. It's not Google!<br><br>(https://google.com)")
 
 Note that Discord will still include the URL in the hover to combat scams and fraud.
 ///

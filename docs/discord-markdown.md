@@ -33,14 +33,41 @@ Below is a table of the things a User can mention, their raw syntax and their ap
 | Role    | `<@&123456789>` | <span class="mention">@Role</span> | Mention appears in the color of the role.<br>If the user has no permission to mention the role, will it not mention users. |
 | Channel | `<#123456789>`  | {{ mention() }}                    |                                                                                                                            |
 
+#### Notifications
+
+Mentioning a User or Role in a message will send a Notification for the Users having the mentioned role, or that have been mentioned directly.  
+This is not the case for the following situations:
+
+- The mentioned user is not on the server/in the DM they were mentioned in.
+- The User has "Do not Disturb" status set. They still have a mention indicator shown in the app.
+- The User mentioning the Role doesn't have the `Mention @everyone, @here, and All Roles` permission.
+- The role mentioned does not have the `Allow anyone to @mention this role` setting enabled.
+- The message is silenced [[More Info](#silent-messages)].
+
+### `@everyone` and `@here`
+
+Writing `@everyone` or `@here` in chat will create a mention that will mention every user on the server, or only users currently online on the server respectively.
+
+/// tip | Funfact
+`@everyone` is also a role every user has and shares the same ID as the Server.  
+This makes it the only object in Discord that doesn't have a unique snowflake ID.
+///
+
+/// example
+//// tab | markdown
+```
+This message mentions @everyone and @here
+```
+////
+
+//// tab | Result
+{{ message('This message mentions <span class="mention">@everyone</span> and <span class="mention">@here</span>', true) }}
+////
+///
+
 ### User
 
 Starting with an at-symbol, followed by the User's unique username, one can create a mention that will notify the user, unless one of the following is the case:
-
-- The user is not on the server, if mentioned on one
-- The user is not in the group DM or DM, if mentioned in one.
-- The user has "Do not Disturb" set as status, which disables notifications and sounds.
-- `@silent` was put at the start of the message, which acts as if all mentioned users had "Do not Disturb" set.
 
 /// example
 //// tab | Markdown
@@ -50,7 +77,7 @@ Starting with an at-symbol, followed by the User's unique username, one can crea
 ////
 
 //// tab | Result
-<span class="mention">@User</span>
+{{ message('<span class="mention">@User</span>', True) }}
 ////
 ///
 
@@ -71,7 +98,7 @@ This is the only mention type that actually changes its color based on the color
 ////
 
 //// tab | Result
-<span class="mention">@Role</span>
+{{ message('<span class="mention">@Role</span>', True) }}
 ////
 ///
 
@@ -88,7 +115,7 @@ Appending an exclamation mark (`!`) after the Hashtag allows you to mention Voic
 ////
 
 //// tab | Result
-{{ mention() }}
+{{ message('<span class="mention"># channel</span>') }}
 ////
 ///
 
@@ -171,7 +198,7 @@ Embeds created by spoilered links will also be spoilered, by having the embed bl
 ////
 
 //// tab | Result
-<span class="spoiler">This is some super secret text!</span>
+{{ message('<span class="spoiler">This is some super secret text!</span>') }}
 ////
 ///
 
@@ -190,8 +217,25 @@ This is normal text
 ////
 
 //// tab | Result
-This is normal text
+{{ message('This is normal text<br><small>This text is so tiny!</small>')}}
+////
+///
 
-<small>This text is so tiny!</small>
+### Silent Messages
+
+Starting a message with `@silent` will have any mentions in it be surpresed for everyone that would usually receive a notification. The `@silent` tag will also be removed from the actual message.  
+Users will still have a mention indicator shown, but will not receive push notifications on mobile or Desktop. This is effectively the same as if all recipients have "Do not Disturb" status.
+
+Silenced messages will have a :discord-message-silent:{ title="This is a @silent message." } icon displayed next to the user's time of posting. Hovering over the message will show `This is a @silent message.`
+
+/// example
+//// tab | Markdown
+```
+@silent This is a silenced message
+```
+////
+
+//// tab | Result
+{{ message('This is a silenced message', True, True) }}
 ////
 ///

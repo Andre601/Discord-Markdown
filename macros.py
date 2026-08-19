@@ -17,3 +17,29 @@ def define_env(env):
         parts.append("</span>")
 
         return "".join(parts)
+    
+    @env.macro
+    def message(msg: str, mention: bool = False, silent: bool = False):
+        parts = ['<div class="discord-message is-mentioned">'] if mention else ['<div class="discord-message">']
+
+        parts.extend([
+            '<img class="discord-avatar" src="/Discord-Markdown/assets/img/android-chrome-512x512.png" alt="discord-avatar">',
+            '<div class="discord-message-content">',
+            '<div class="discord-message-header">',
+            '<span class="discord-username">Discord-Markdown</span>',
+            '<span class="discord-timestamp">Today at 00:00</span>'
+        ])
+        
+        if silent:
+            parts.append('<span class="discord-silent-message" title="This is a @silent message."></span>')
+        
+        parts.extend([
+            '</div>',
+            '<div class="discord-message-body">',
+            f'{msg}',
+            '</div>',
+            '</div>',
+            '</div>'
+        ])
+
+        return "\n".join(parts)

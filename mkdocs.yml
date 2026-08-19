@@ -35,6 +35,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
+    - content.tooltips
   icon:
     repo: 'simple/github'
     admonition:
@@ -69,6 +70,7 @@ markdown_extensions:
       permalink: true
       toc_depth: 2-6
   - markdown.extensions.footnotes:
+  - markdown.extensions.md_in_html:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg

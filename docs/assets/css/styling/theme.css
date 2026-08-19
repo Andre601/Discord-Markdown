@@ -1,6 +1,7 @@
 [data-md-color-scheme="onyx"] {
     --mx-topbar-bg: #5865F2;
     --md-default-bg-color: #070709;
+    --md-default-bg-color--light: #303030;
     --md-default-fg-color: oklab(0.894514 0.000141621 -0.0041967);
     --md-default-fg-color--light: oklab(0.916613 0.00117499 -0.00385195);
     --md-typeset-color: oklab(0.894514 0.000141621 -0.0041967);
@@ -64,7 +65,7 @@
     color: var(--md-typeset-mention-fg-color);
     background-color: var(--md-typeset-mention-bg-color);
     border-radius: 3px;
-    padding: 0.15rem;
+    padding: 0rem 0.15rem;
     transition: color 125ms, background-color 125ms;
     cursor: pointer;
 }
@@ -131,4 +132,8 @@
 
 .md-header__button.md-logo img {
     height: 2.4rem;
+}
+
+.md-tooltip2 .md-tooltip2__inner {
+    background-color: var(--md-default-bg-color--light);
 }
