@@ -25,6 +25,9 @@ watch:
 theme:
   name: material
   topbar_style: primary
+  logo: assets/img/android-chrome-512x512.png
+  favicon: assets/img/android-chrome-512x512.png
+  custom_dir: override
   palette:
     - scheme: 'onyx'
       primary: 'indigo'
