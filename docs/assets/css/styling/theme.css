@@ -4,6 +4,7 @@
     --md-default-bg-color--light: #303030;
     --md-default-fg-color: oklab(0.894514 0.000141621 -0.0041967);
     --md-default-fg-color--light: oklab(0.916613 0.00117499 -0.00385195);
+    --md-default-fg-color--lighter: oklab(0.916613 0.00117499 -0.00385195 / 0.1);
     --md-typeset-color: oklab(0.894514 0.000141621 -0.0041967);
     --md-typeset-a-color: oklab(0.623584 -0.0424406 -0.161664);
     --md-typeset-small-color: oklab(0.694091 0.00173712 -0.0100561);
