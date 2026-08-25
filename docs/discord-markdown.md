@@ -67,7 +67,7 @@ This message mentions @everyone and @here
 
 ### User
 
-Starting with an at-symbol, followed by the User's unique username, one can create a mention that will notify the user, unless one of the following is the case:
+Starting with an at-symbol, followed by the User's unique username, one can create a mention that will notify the user.
 
 /// example
 //// tab | Markdown
