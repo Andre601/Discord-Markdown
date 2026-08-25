@@ -2,34 +2,34 @@
     --mx-topbar-bg: #5865F2;
     --md-default-bg-color: #070709;
     --md-default-bg-color--light: #303030;
-    --md-default-fg-color: oklab(0.894514 0.000141621 -0.0041967);
-    --md-default-fg-color--light: oklab(0.916613 0.00117499 -0.00385195);
-    --md-default-fg-color--lighter: oklab(0.916613 0.00117499 -0.00385195 / 0.1);
-    --md-typeset-color: oklab(0.894514 0.000141621 -0.0041967);
-    --md-typeset-a-color: oklab(0.623584 -0.0424406 -0.161664);
-    --md-typeset-small-color: oklab(0.694091 0.00173712 -0.0100561);
+    --md-default-fg-color: #dcdcdc;
+    --md-default-fg-color--light: #e3e3e3;
+    --md-default-fg-color--lighter: #e3e3e340;
+    --md-typeset-color: #dbdcdf;
+    --md-typeset-a-color: #3687e9;
+    --md-typeset-small-color: #9b9ca3;
     --md-typeset-table-color: var(--md-default-fg-color--light);
-    --md-typeset-table-color--light: oklab(91.669% 0.00114 -0.00398 / 0.25);
+    --md-typeset-table-color--light: #ffffff40;
 
-    --md-code-bg-color: oklab(0.57738 0.0140701 -0.208587 / 0.0784314);
-    --md-code-fg-color: oklab(0.894514 0.000141621 -0.0041967);
-    --md-code-border-color: color-mix(in oklab, hsl(240 calc(1*4%) 60.784% /0.3215686274509804) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.3215686274509804) var(--custom-theme-border-color-amount, var(--custom-theme-base-color-amount, 0%)));
+    --md-code-bg-color: #5865f214;
+    --md-code-fg-color: #dbdcdf;
+    --md-code-border-color: #97979f52;
 
     --md-admonition-fg-color: var(--md-default-fg-color);
     --md-admonition-bg-color: var(--md-default-bg-color);
 
-    --md-typeset-mention-fg-color: oklab(0.747617 0.00671133 -0.126112);
-    --md-typeset-mention-bg-color: oklab(0.57738 0.0140701 -0.208587 / 0.239216);
-    --md-typeset-mention-fg-color--hover: rgb(255, 255, 255);
-    --md-typeset-mention-bg-color--hover: rgb(88, 101, 242);
+    --md-typeset-mention-fg-color: #93a7fd;
+    --md-typeset-mention-bg-color: #5865f23d;
+    --md-typeset-mention-fg-color--hover: #ffffff;
+    --md-typeset-mention-bg-color--hover: #5865f2;
 
     --md-default-fg-color--lightest: var(--md-default-fg-color);
 
-    --md-typeset-spoiler-bg-color: oklab(0.480977 0.00313355 -0.0156577);
-    --md-typeset-spoiler-bg-color--hover: oklab(0.588066 0.00220281 -0.0119324);
-    --md-typeset-spoiler-bg-color--clicked: rgba(151, 151, 159, 0.12);
+    --md-typeset-spoiler-bg-color: #5c5d67;
+    --md-typeset-spoiler-bg-color--hover: #7b7c84;
+    --md-typeset-spoiler-bg-color--clicked: #97979f1f;
 
-    --md-typeset-spoiler-fg-color: oklab(0.894514 0.000141621 -0.0041967);
+    --md-typeset-spoiler-fg-color: #dbdcdf;
 }
 
 .md-footer-meta {
