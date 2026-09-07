@@ -35,14 +35,14 @@ Below is a table of the things a User can mention, their raw syntax and their ap
 
 #### Notifications
 
-Mentioning a User or Role in a message will send a Notification for the Users having the mentioned role, or that have been mentioned directly.  
-This is not the case for the following situations:
+Mentioning a User or Role in a message will send a Push Notification for the mentioned Users, or for every user having the mentioned role assigned.  
+This is not the case for the following cases:
 
 - The mentioned user is not on the server/in the DM they were mentioned in.
-- The User has "Do not Disturb" status set. They still have a mention indicator shown in the app.
+- The User has "Do not Disturb" or "Invisible" status set. They still have a mention indicator shown in the app but will not receive a Push Notification.
 - The User mentioning the Role doesn't have the `Mention @everyone, @here, and All Roles` permission.
 - The role mentioned does not have the `Allow anyone to @mention this role` setting enabled.
-- The message is silenced [[More Info](#silent-messages)].
+- The message is silenced [[More Info](#silent)].
 
 ### `@everyone` and `@here`
 
@@ -63,6 +63,45 @@ This message mentions @everyone and @here
 //// tab | Result
 {{ message('This message mentions <span class="mention">@everyone</span> and <span class="mention">@here</span>', true) }}
 ////
+///
+
+### `@silent`
+
+Starting a message with `@silent` will have any mentions in it be surpresed for everyone that would usually receive a Push Notification. The `@silent` tag will also be removed from the actual message.  
+This is effectively the same as if all recipients have "Do not Disturb" or "Invisible" status.
+
+Silenced messages will have a :discord-message-silent:{ title="This is a @silent message." } icon displayed next to the user's time of posting. Hovering over the message will show `This is a @silent message.`
+
+/// example
+//// tab | Markdown
+```
+@silent This is a silenced message
+```
+////
+
+//// tab | Result
+{{ message('This is a silenced message', True, True) }}
+////
+///
+
+### `@time`
+
+Writing `@time` in the chat will show a selectable option to create a Timestamp with.  
+When selected, you can either insert a date and/or time, or simply leave empty to use the moment of when you selected the option.
+
+Discord will show you multiple variants for how the timestamp has to look. Clicking one will automatically insert it into your chat, replacing the `@time` option.
+
+/// tip
+The option supports various date and time formats, allowing highly flexible configurations.  
+Some examples of valid dates include:
+
+- `dd.mm.yyyy`
+- `dd/mm/yyyy`*
+- `mm/dd/yyyy`*
+- `yyyy-mm-dd`
+- `dd month yyyy` (i.e. `31 january 2026`)
+
+*If the provided date is valid in both formats (Day is less than 13) will Discord prioritize the pattern used in your local settings.
 ///
 
 ### User
@@ -218,24 +257,5 @@ This is normal text
 
 //// tab | Result
 {{ message('This is normal text<br><small>This text is so tiny!</small>')}}
-////
-///
-
-### Silent Messages
-
-Starting a message with `@silent` will have any mentions in it be surpresed for everyone that would usually receive a notification. The `@silent` tag will also be removed from the actual message.  
-Users will still have a mention indicator shown, but will not receive push notifications on mobile or Desktop. This is effectively the same as if all recipients have "Do not Disturb" status.
-
-Silenced messages will have a :discord-message-silent:{ title="This is a @silent message." } icon displayed next to the user's time of posting. Hovering over the message will show `This is a @silent message.`
-
-/// example
-//// tab | Markdown
-```
-@silent This is a silenced message
-```
-////
-
-//// tab | Result
-{{ message('This is a silenced message', True, True) }}
 ////
 ///
