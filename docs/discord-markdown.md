@@ -159,19 +159,35 @@ Appending an exclamation mark (`!`) after the Hashtag allows you to mention Voic
 ///
 
 ----
-## Custom Emojis
+## Emojis/Emotes
 
-Discord allows custom emojis to be displayed on the server.  
-The format used in the client to use is the same as unicode emojis, no matter if animated or not.
+Unicode Emojis and Emotes - Discord's custom emoji feature - can be used using the same syntax: `:name:`  
+Depending on the emote's name will the client append `~<number>` to the name (i.e. if there are two Emotes called `smile`, one will show as `smile~1`).
 
-The actual syntax used by Discord for custom emojis is different depending on the type of Emoji:
+While Unicode Emojis are used as is (using their Unicode value) do Emotes use a custom syntax in Discord:
 
 |Emoji type | Raw syntax           |
 |-----------|----------------------|
 | Static    | `<:name:123456789>`  |
 | Animated  | `<a:name:123456789>` |
 
-The name can be any and is only used by the client to display in the hover, if the emoji is from a server the client doesn't share.
+The name in the format can be anything and is only used for emotes the client cannot retrieve the name from.
+
+/// tip
+Prefixing the `:name:` pattern with a `+` will add it as a reaction to the last message in chat.
+///
+
+/// example
+//// tab | Markdown
+```
+:smile:
+```
+////
+
+//// tab | Result
+{{ message('<img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f604.svg" title=":smile:">') }}
+////
+///
 
 ----
 ## Timestamps
@@ -179,8 +195,7 @@ The name can be any and is only used by the client to display in the hover, if t
 A unique feature in Discord is sharing timestamps, which automatically display in the user's language and with the date and time converted to their timezone.  
 This means that a time of UTC 00:00 shows as 00:00 for users with UTC+0 while it shows as 01:00 for users with UTC+1.
 
-The client allows creating a timestamp by writing `@time` and selecting the non-user option in the suggestions. You can then fill in a date and time to have it be converted to a timestamp on send.  
-There's no known syntax used for the `@time` feature.
+The custom [`@time`](#time) mention type can be used to create a timestamp in the client.
 
 The raw format of the timestamp is as follows:
 
@@ -188,14 +203,10 @@ The raw format of the timestamp is as follows:
 <t:123456789:r>
  |     |     |- Optional style definition
  |     |
- |     |- Unix Timestamp in seconds (not milliseconds)
+ |     |- UNIX timestamp (Seconds since January 1st, 1970)
  |
  |- Always t to identify the timestamp format
 ```
-
-### Unix timestamp
-
-The number used after the `<t:` is the unix timestamp (Seconds since January 1st, 1970) and can easily be obtained through various online tools.
 
 ### Variants
 
