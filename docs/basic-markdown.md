@@ -203,3 +203,5 @@ The following unique behaviours are displayed:
     - Message (Different Server): {{ mention(is_message = True, has_server = True) }}
     - Threads, News Channels, Voice Channels and Stage channels have the same behaviour, but display their respective icons instead of the Hashtag.
 - Links to Music and Playlists on Spotify will render a custom embed that allows you to listen to a snippet of the song or playlist.
+- Invites to a Server will Display a small embed with the Server icon, server name, current number of online and total users on the server. A Join Button will also be displayed that can be clicked.
+    - Appending a `event` query parameter with a valid event ID will change the embed to also display info regarding the event such as name, description, how many joined the waitlist, when it happens and who created the event.
