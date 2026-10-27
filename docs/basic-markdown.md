@@ -150,7 +150,9 @@ To use Syntax highlighting, add the name of the coding language (i.e. markdown) 
 Pasting any link in Discord makes them clickable.  
 Additionally will Discord display an embed containing Information based on the site's Open Graph and/or Twitter Card Metadata, including Thumbnails, Images and Videos [with some special exceptions](#special-links-behaviour).
 
-Display of such an embed can be supressed by wrapping the link in chevrons (`<>`). This also works for [embedded links](#embedded-links).  
+Sites providing a `<script>` tag with ID `discord:component-embed` and a supported Component JSON structure can also modify the output of the embed ([Learn More](https://docs.discord.com/developers/link-previews/component-embeds)).
+
+Display of such embeds can be supressed by wrapping the link in chevrons (`<>`). This also works for [embedded links](#embedded-links).  
 Embeds may also not be shown, if the user who posted the link does not have `Embed Links` permissions on the server.
 
 /// example
